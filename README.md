@@ -1,4 +1,4 @@
-# Lakehead University winter 2023 class notes for students in 2020 - 2024
+# Lakehead University winter 2023  
 
 ### Table of contents
 1. [Disclaimer](#disclaimer)<br/>
