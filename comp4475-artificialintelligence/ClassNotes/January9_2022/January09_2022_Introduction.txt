@@ -1,0 +1,10 @@
+Midterm exam will be online, and is on February 15th
+Final exam will be online, and is TBD
+
+The course is a hybrid course. Therefore, weekly classes will be a mix of Zoom and in-person in room OA2017. 
+
+	Precondition for some specific action is applicability and probability of something occuring. For example, some precondition actions for opening a door would 
+be determining if the door is locked and closed. Preconditions for the actions of opening a door is that the door is closed and unlocked. Each resulting state
+after some action is only applied to that specific action, as opposed to all actions. 
+
+	Inductive, deductive, and abductive reasoning. 

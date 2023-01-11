@@ -1,0 +1,22 @@
+A classical AI problem : block world. 
+
+Preconditions for picking up a block must ensure there is no block above the block selected. 
+
+a) if the top block on the stack is removed, that block is now available for pickup and moved to a different location. The initial state is the starting 
+point in a system. Actions are declared for the system, with each requiring a precondition and postcondition. The state in which we want to change the system
+is called the goal state. We want to find the sequence of actions that must take place to convert the initial state into the goal state. Think intuitively
+about how to reach the goal state. You have to look in state-space to search for a state that converts into a goal state.
+
+b) We can represent a singular state as a node. An individual state can be changed into some other state. States drawn in a node diagram are related to each other.
+Through applicable actions, if we can draw one state to another state, the states are considered linked. In one atomic action, you must be able to translate
+between the two states. The enumeration of the states is a structure containing constant states in the system (data types, variables, etc.). Constraint extraction
+and symmetry breaking. Symmetry breaking is ... . A deep space diagram is the diagram of all possible system states. In the deep state diagram, we want to find
+the optimal path from the initial state to the goal state. We can sometimes get stuck in a 'dead loop', which is where a loop of states can constantly occur
+over and over again. We must traverse through the deep space diagram and find the smallest number of states to achieve our goal state (lowest cost). A dead loop
+instantly becomes an infinite number of steps. We use depth-first search and breadth-first search when iterating through the deep space diagram to find the
+path of the least number of needed states to go from the initial state to the goal state; we use a stack and queue for this purpose. State space explosion is .... 
+
+c) Tower of Hanoi can represent a state diagram going from the initial to the goal state. 
+
+d) 8-puzzles can represent a state diagram going from the initial to the goal state. For each step in a collection of state diagrams, there are substeps
+for each step. 

@@ -1,0 +1,98 @@
+Brief overview: 
+	Assembly-level machine organization
+	Memory system organization and architecture
+	Writing simple I/O routines and interrupt handlers
+	Introduction to initialization and process management in a Unix or Unix-like operating system 
+
+
+Software tools
+	Visual Studio 2019/22
+	MASM (Microsoft Assembler)
+	NASM (Netwide Assembler)
+
+
+1. Basic concepts
+2. Processor architecture
+3. Assembly langueg fundamentals
+4. Data transfer addressing and arithmetic
+5. Procedures
+6. Condition processing
+7. Integer arithmetic
+8. Advanced procedures
+9. Process management
+10. Processes and threads
+
+
+
+Basic concepts of assembly and computer systems:
+	i) Welcome to assembly language ii) Virtual machine concept iii) Data representation iv) Boolean operations
+
+	int y;
+	int x = (y + 4) * 3
+
+	mov eax, y			; Move y to the eax register
+	add eax, 4			; Add 4 to the eax register
+	mov ebx, 3			; Move 3 to the ebx register
+	imul ebx			; Multiply eax by ebx
+	mov x, eax			; Move eax to x
+
+Each computer has a native machine language L0 that runs directly on the hardware
+A more human-friendly language is usually constructed above machine language, called L1
+
+Interpretation - L0 program interprets and executes L1 instructions one-by-one
+Translation - L1 program is completely translated into an L0 program, which then runs on the computer hardware
+
+
+
+
+English: Display the sum of A times B plus C
+
+C++: cout << (A * B + C);
+
+Assembly:
+	mov eax, A
+	mul B
+	add eax, C
+	call WriteInt
+
+Intel Machine Language:
+	A1 00000000
+	F7 25 00000004
+	..
+	..
+
+
+Specific machine levels
+	Virtual machine VM1
+	Virtual machine VM2
+
+
+	Level 4 
+		High-level language
+		
+		Application oriented language:
+			C++, Java, Pascal, Visual Basic, etc.
+		Programs compile into assembly language
+	Level 3
+		Assembly language
+		
+		Instruction mnemonics that have a one-to-one correspondence to machine language
+		Programs are translated into instruction set architecture level - machine language (level 2)
+	Level 2
+		Instruction set architecture (ISA)
+		Conventional machine language
+		Executed by level 1 (Digital logic).
+	Level 1
+		CPU, constructed from digital logic gates
+		Digital logic
+		System bus
+		Memory
+		Implemented using bipolar transistor
+
+
+
+
+	
+	
+
+		
