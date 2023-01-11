@@ -4,8 +4,6 @@
 1. [Disclaimer](#disclaimer)<br/>
 2. [Resources available here](#resources)<br/>
 3. [Credits](#credits)<br/>
-<br/>
-<br/>
 
 ### <a name="disclaimer" title="A disclaimer message about the contents within this repository">Disclaimer</a>
 <p>If you are looking for answers or other materials which would allow you to cheat, move along. This repository only contains materials which are publicly
