@@ -1,0 +1,63 @@
+Mark distribution:
+	15% homework
+	35% midterm
+	50% final
+
+
+An algorithm is a sequence of unambiguous instructions for solving a problem. Obtaining a required output for any valid input in a finite amount of time.
+The algorithm process is often recursive in nature. You may have to move backwards in your process to modify previous processes. 
+
+Key aspects of algorithm:
+	Analysis: Predict the cost of an algorithm in terms of resources and performance
+	Design: Creating an efficient algorithm to solve a problem in an efficient way using minimum time and space 
+
+Correctness and efficiency:
+	An algorithm is said to be correct if, for an input instance, it always finds the correct output, regardless of time or space. 
+	Because of the number of correct algorithms available, we must find the optimal algorithm to solve the problem; to maximize efficiency. 
+
+Algorithm analysis:
+	Time complexity is a fucntion describing the amount of time required to run an algorithm in terms of output size
+	Space complexity is a function describing the amount of memory an algorithm takes in terms of the size of input to the algorithm - Memory used in computers
+
+RAM Model 
+	We need to consider machine-independent efficiency
+	Machine-independent algorithm design depends upon a hypothetical computer known as the RAM
+
+	RAM:
+		Each simple operation (arithmetic, if, call, etc.) takes one time step
+		Loops and subroutines depends upon the number of loop iterations or the specific nature of the subroutine for computational time execution; we must 
+			consider each step-by-step instruction. 
+		Memory access takes exactly one-time step. RAM takes no notice of whether an item is in the cache or on disk; each memory access takes exactly one time 
+			step.
+
+Notes about RAM:
+	Model simplifies the calculation and gives us a good benchmark for understanding the efficiency of algorithms
+	Gives us a model to estimate the run time of an algorithm, that is machine independent.
+
+Running time function:
+	The runtime of an algorithm depends on the length of the input data. We define a function T(n) of the data to represent the running time, where n is the
+		data length, to estimate the total running or computational time. 
+	In algorithms, we use summation formulas to represent loops. 
+
+Insertion sort example:						cost		time
+	for j = 2 to n							c1			n		time because the for loop iterates through the loop once  
+		key = A[j]							c2			n - 1 	
+		i = j - 1							c3			n - 1
+		while (i > 0) and A[i] > key		c4			
+			A[i+1] = A[i]					c5
+			i = i - 1						c6
+		A[i+1] = key						c7			n - 1	time because 
+
+General rule: Focus on the complexity of the worst case. Main reasons:
+	1. Gives us an upper bound on the running time
+	2. The worse case occurs fairly often
+	3. The average case is often roughly as bad as the worst case. Usually, a probabilistic analysis is applied to the average case in order to define it. 
+
+Order of growth:
+	In best case running time is linear function. Worst case is a quadratic function.
+	Further simplifying abstraction, we call it the rate of growth or order of growth of the running time. 
+	Ignore the leading term's coefficient, since constant factors are less significant than the rate of growth in determining computational efficiency. 
+	We write insertion sort has a worst-case running time of O(n^2) (theta n-squared).
+	We usually consider one algorithm to be more efficient than another if its worst case running time has a lower order of growth.
+	Formal definition of order of growth will be discussed in the future...
+

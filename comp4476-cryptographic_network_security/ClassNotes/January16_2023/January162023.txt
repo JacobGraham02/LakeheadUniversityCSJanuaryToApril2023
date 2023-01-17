@@ -1,0 +1,42 @@
+ Symmetric encryption, asymmetric encryption, data integrity algorithms, authentication protocols. 
+
+1) Conceal contents of blocks or streams of any sized data
+2) Conceal small blocks of data such as encryption keys and hash function values. Used often in digital signatures
+3) Protects blocks of data such as messages from alteration
+4) Schemes based on the use of cryptographic algorithms designed to authenticate the identity of entities
+
+Network and internet security consists of:
+	Measures to deter, prevent, detect, and correct security violations that involve transmission of information. 
+
+
+Computer Security objectives:
+	Confidentiality:
+		Data confidentiality - Assure that private information not made available to any unauthorized users
+		Privacy - Assures individuals control or influence over information that may be collected and stored, and to whom that information is disclosed 
+
+	Integrity:
+		Data integrity - Assures that information and programs are changed only in a specified and authorized manner
+		System integrity - Assures that a system performs its intended function in an unimpaired manner, free from unauthorized manipulation 
+
+	Availability:
+		Systems work promptly and service is not denied to authorized users. 
+
+
+
+OSI security architecture:
+	
+
+
+
+Table 1.1 of threats and attacks:
+	Threat:
+		A potential for violation of security, which exists when there is a circumstance, capability, action, or event that could breach security and cause harm.
+		That is, a possible danger that might exploit a vulnerability.
+
+	Attack:
+		An assault on system security that derives from an intelligent threat; that is, an intelligent act that is a deliberate attempt to evade security services
+		and violate the security policy of a system. 
+
+	
+A passive attack attempts to learn or make use of information from the system but does not affect system resources
+An active attack attempts to alter system resources ot affect their operation

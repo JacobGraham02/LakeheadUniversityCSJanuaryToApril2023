@@ -92,34 +92,29 @@ Specific machine levels
 
 
 
-Data representation:
-	Binary numbers - Translating between binary and decimal 
-	Binary addition
-	Integer storage sizes 
-	Hexadecimal integers - Translating between decimal and hexadecimal. Hexadecimal subtraction
 	
-		
-	1) Each binary number from LSB to MSB is a sum of the powers of 2. If a decimal number digit is 0, you would count that as a 1. 
-		For example, 1110 would be considered 7. Any leading zeroes do not matter. 
+Learn how to do the following:
+	Form the two's complement of a hexadecimal integer:
+		Suppose we have 1C5. First, we need to convert this number to decimal by doing the following operations: (5 * 16^0) + (C * 16^1) + (1 * 16^2). Then, we will continuously do operations which divide that number by 2 
+		until the quotient will be less than 1. For each division step, use the quotient from the previous division operation. Arrange the binary number from the digits bottom-to-top. Finally, to store the number in
+		two's complement format, we will reverse all the bits and add 1 to the reversed bits. 
 
-	    i) Repeatedly divide the decimal integer by 2, with the remainder being a binary digit in the translated value
+	Convert signed binary to decimal:
+		Let's suppose we have 110011. For each n digits in the binary number, with the current m digit selected, we take the sum of all the terms such that: sum = (m1 + 2^n1) + ... + (m + 2^n)
+		sum (from LSB to MSB) = (1 * 2^0) + (1 * 2^1) + (0 * 2^2) + (0 * 2^3) + (1 * 2^4) + (1 * 2^5) = 51
 
-		Starting with the LSB, add each pair of digits and include the carry digit if present
+	Convert signed decimal to binary: 
+		Let's suppose we want to convert 51 into binary. To do this, we would do the repeated division technique by repeatedly dividing on the first step the number itself by 2, and on subsequent steps the quotient by 2. 
+		We also store the remainder of each division result. Once we can no longer divide the number to avoid getting a quotient of less than 1, we add up the binary digits into a binary number in reverse order to how we
+		got the remainders. 
 
-		  00000100
-		+ 00000111
-		  --------
-		  00001011
+	Convert decimal to hexadecimal:
+		This process is the exact same steps as the division by 2, except that we are using division by 16 because a hexadecimal number is a base of 16. The remainder can be anywhere between 0 (0) and 15 (F). If the remainders
+		lie between 10 and 15, you have to convert those numbers into their equivalent hexadecimal values (10, 11, 12, 13, 14, 15) -> (A, B, C, D, E, F).
 
-	
-    Integer storage sizes: Look on saved image to copy down values
-				Unsigned byte ->	Unsigned word ->    Unsigned doublword ->   Unsigned quadword
-	     0 to	2^8-1				2^16-1				2^32-1					2^64-1
-
-	Multiply each digit by its corresponding power of 16:
-	1234:	dec = (1 * 16^3) + (2 * 16^2) + (4 * 16^4) + (4 * 16^0), or decimal 4660
-
-	
+	Convert signed hexadecimal to decimal:
+		For each n digits in the hexadecimal number, with the current m digit selected, we take the sum of all the terms such that: sum = (m1 + 16^n1) + ... + (m + 16^n). You must convert all hexadecimal letters (A - F) to ints
+		sum (from LSB to MSB) of 1C5: (1 * 16^2) + (12 * 16^1) + (5 * 16^0) = 453
 	
 
 		
