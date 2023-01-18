@@ -10,4 +10,4 @@ Basic algorithms for searching a graph:
 		My solution
 		Does not go in alphabetical order: A -> B -> E -> G -> I -> H -> J -> F -> D -> C
 
-		Visited, discovered, rediscovered are terms which need to be used for graph searching. 
+		Visited, discovered, rediscovered, 
