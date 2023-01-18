@@ -1,0 +1,52 @@
+x86 processor architecture:
+	
+	Basic microcomputer design:
+		Clock synchronizes CPU operations.
+		The control unit coordinates the sequence of execution steps.
+		The arithmetic logic unit performs arithmetic and bitwise processing.
+		
+		In the CPU, there are many registers, control unit, arithmetic logic unit, and a clock. The control bus connects the cpu to the memory storage unit and any I/O devices; the address bus does the same. Constrastly to the
+		data bus that transfers all information relevant to other components connected to the data bus, the control bus and address bus only transfer information that have specific instruction architecture. 
+		The data bus is mainly for transferring instructions between the CPU and memory. The I/O bus transfers instructions between the CPU and I/O devices. The control bus is mainly responsible for generating instructions and 
+		control signals to synchronize actions between different components. The address bus controls when the CPU can access some memory location. When the CPU requests access to some memory, the address bus is mainly 
+		responsible for informing the CPU the memory at that address can be used, and for transferring data over the address bus that is stored at some memory location. 
+
+
+	Clock:
+		Synchronizes all CPU and bus operations
+		Machine (clock) cycle measures time of a single operation
+		Clock is used to trigger events
+	
+		One cycle is measured in a specific frequency. A higher frequency indicates a faster computer where more cycles are executed compared to a lower frequency. 
+
+
+	Instruction execution cycle:
+		Fetch -> Decode -> Fetch operands -> Execute -> Store output
+		
+		Code from memory will go on the data bus and into the code cache. Data will be moved on the address bus into the code cache. The instruction pointer will point to specific areas in memory to store memory locations.
+		After a pointer is generated, the instruction decoder will go to that memory location and will process the instructions at that memory location. The processed instructions will be transferred to the control unit in
+		the CPU. From here, the CPU will utilize registers to store data and instructions during program execution and to provide functionality for a 5-step memory process. A special data cache is used to store the data
+		from the physical code. 
+
+		After executing the first line in a program, the instruction pointer will be incremented by one to access subsequent memory locations for program instructions. Both the code cache and data cache is connected
+		for both the data and address bus. 
+
+
+	Reading from memory:
+		Multiple machine cycles are required when reading from memory, because it responds much more slowly then the CPU. The steps are:
+			1. Place the address of the value you want to read on the address bus
+			2. Assert (change the value of) the processor's read pin
+			3. Wait one clock cycle for the memory chips to respond
+			4. Copy the data from the data bus into the destination operand
+
+
+	Cache memory:
+		High-speed expensive static RAM both inside and outside the CPU.
+			Level-1 cache: inside the CPU
+			Level-2 cache: outside the CPU
+
+		Cache hit: When data to be read is already in cache memory
+		Cache miss: When data to be read is not in the cache memory 
+
+
+

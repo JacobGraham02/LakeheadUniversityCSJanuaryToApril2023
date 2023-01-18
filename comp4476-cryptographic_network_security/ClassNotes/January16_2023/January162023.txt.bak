@@ -36,3 +36,7 @@ Table 1.1 of threats and attacks:
 	Attack:
 		An assault on system security that derives from an intelligent threat; that is, an intelligent act that is a deliberate attempt to evade security services
 		and violate the security policy of a system. 
+
+	
+A passive attack attempts to learn or make use of information from the system but does not affect system resources
+An active attack attempts to alter system resources ot affect their operation

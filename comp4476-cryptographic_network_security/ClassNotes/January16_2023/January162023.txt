@@ -39,4 +39,4 @@ Table 1.1 of threats and attacks:
 
 	
 A passive attack attempts to learn or make use of information from the system but does not affect system resources
-An active attack attempts to alter system resources ot affect their operation
+An active attack attempts to alter system resources or affect their operation

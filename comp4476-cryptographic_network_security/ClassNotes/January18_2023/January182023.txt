@@ -1,0 +1,111 @@
+Security services:
+	Defined by X.800 as:
+		A service provided by a protocol layer of communicating open systems and that ensures adequate security of the systems or of data transfers
+
+	Defined by RFC 4949 as:
+		A processing or communication service provided by a system to give ...
+
+Access control is a method used to control which users of a system have access to which resources. 
+Connected-oriented confidentiality is the connection between the user and system is established before the data is transmitted.
+In connectionless, a secure connection between the user and system is not established before data is transmitted. 
+Nonrepudiation ensures all parties involved in the communication cannot deny later that the message was sent or received. Provides protection against denial by one of the entities involved in a communication of having
+participated in all of part of the communication. 
+
+
+Authentication:
+	Concerned with assuring that a communication is authentic. In the case of a single message, assures the recipient that the message is from the source that is claims to be. In the case of ongoing interaction, assures the two
+	entities are authentic and that the connection is not interfered with in such a way that a third party can masquerade as one of the two legitimate parties. 
+
+	
+Access control:
+	The ability to limit and control the access to host systems and applications via communication links. To achieve this, each entity trying to gain access must first be identified (authenticated), so that access rights can
+	be tailored to the individual. 
+
+
+Data confidentiality:
+	The protection of transmitted data from passive attacks. Broadest service protects all user data transmitted between two users over a period of time. Narrower forms of service includes the protection of a single message
+	or even specific fields within a message
+	
+	The protection of traffic flow from analysis. This requires that an attacker not be able to observe the source and destination, frequency, length, or other characteristics of the traffic on a communications facility. 
+
+
+Data Integrity:
+	Can apply to a stream of messages, a single message, or selected fields within a message
+	...
+
+
+Nonrepudiation:
+	Prevents either sender or receiver from denying a transmitted message. When a message is sent, the receiver can prove that the alleged sender in fact sent the message. When a message is received, the sender can prove that the
+	alleged received in fact received the message. 
+
+
+Availability service:
+	Protects a system to ensure its availability
+	This service addresses the security concerns raised by denial-of-service attacks
+	It depends on proper management and control of system resources and thus depends on access control service and other security services
+
+
+Security mechanisms:
+	Specific:
+		Encipherment				- Algorithms to transform data into a form that is not readily intelligible. The transformation and subsequent recovery of data depend on the algorithm and zero or more encryption keys
+		Digital signatures			- Data appended to, or a cryptographic transformation of, a data unit that allows a recipient of the data unit to prove the source and integrity of the data unit and protect against forgery
+		Access controls				- Mechanisms which enforce access rights to resources
+		Data integrity				- Mechanisms to assure the integrity of a data unit or stream of data units
+		Authentication exchange		- Mechanism intended to ensure the identity of an entity by means of information exchange
+		Traffic padding				- Insertion of bits into gaps in a data stream to uproot traffic analysis attempts
+		Routing control				- Enables selection of particular physically secure routes for certain data and allows routing change, especially when a breach of security is suspected
+		Notarization				- Use a trusted third party to assure certain properties of a data exchange
+
+	Pervasive:
+		Trusted functionality		- Mechanism correct with respect to some defined criteria (security policy).
+		Security labels				- Marking a resource that names or designates the security attributes of that resource
+		Event detection				- Detection of security-relevant events
+		Security audit trails		- Data collection and potentially used to facilitate a security audit, which is an independent review and examination of system records and activities
+		Security recovery			- Deals with requests from mechanisms, such as event handling and management functions, and takes recovery actions 
+
+Authenticity
+Confidentiality
+Integrity
+Availablity
+Accountability
+
+
+
+Fundamental security design principles:
+	Economy of mechanism
+	Fail-safe defaults
+	Complete meditation
+	Open design
+	Separation of privilege
+	Least privilege
+	Least common mechanism
+	Psychological acceptability
+	Isolation
+	Encapsulation
+	Modularity
+	Layering
+	Least astonishment
+
+
+Attack surfaces:
+	Economy of mechanism:
+		Means that the design of security measures embodied in both hardware and software should be as simple and small as possible
+		Relatively simple, small design is easier to test and verify thoroughly
+		WIth a complex design, there are many more opportunities for an adversary to discover subtle weaknesses to exploit that may be difficult to spot ahead of time
+
+	Fail-safe defaults:
+		Means that access decisions should be based on permission rather than exclusion
+		The default situation is lack of access, and the protection scheme identifies conditions under which access is permitted
+		Most file access systems and virtually all protected services on client/server use fail-safe defaults
+
+
+	An attack surface consists of the reachable and expolitable vulnerabilities in a system. 
+	Examples:
+		Open ports on outward facing web and other servers, and code listening on those ports
+		Services available on the inside of a firewall
+		Code that processes incoming data, email, XML, office documents, and industry-specific custom data exchange formats
+		Interfaces, SQL, and web forms
+		An employee with access to sensitive information vulnerable to a social engineering attack
+
+
+
