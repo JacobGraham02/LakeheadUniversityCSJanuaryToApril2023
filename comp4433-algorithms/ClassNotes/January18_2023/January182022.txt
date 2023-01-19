@@ -1,0 +1,15 @@
+The midterm examination is held after the reading week. Study week according to Lakehead University is from Monday, February 20 to Friday, February 24. 
+
+Growth of functions:
+
+	Formal definition: 	
+		Asymptotic Notations:
+			Way to describe the characteristics of a function in the limit
+			Describes the rate of growth of functions
+			Focus on what is important by abstracting away low-order terms and constant factors
+			It is a way to compare "sizes" of functions
+			We will mainly focus on big o, big omega, and time complexity. 
+
+	
+	Data Structures review:
+		
