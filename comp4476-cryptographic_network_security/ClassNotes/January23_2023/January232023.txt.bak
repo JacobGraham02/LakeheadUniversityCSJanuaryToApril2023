@@ -1,0 +1,55 @@
+Attack tree:
+	Branching hierarchial data structure that represents a set of potential techniques for exploiting security vulnerabilities. The security incident (goal of the attack) is represented as the root node of the tree, and
+	the ways that an attacker could reach the goal are represented as branches and subnodes of the tree. The final nodes on the paths outward from the root (leaf nodes), represent different ways to initiate an attack.
+	The motivation for the use of attack trees is to effectively exploit the information available on attack patterns. 
+
+	Definitions from examples:
+		1) UT 	- User Terminal 
+		2) CC 	- Communication Channel. Focus on communication links. 
+		3) IBS 	- Internet Banking Server. Attacks are focused on servers that host user applications. 
+
+		5 types of attacks:
+			1) User credential compromise 						- Monitoring user actions to obtain certain information; sniffing through communication channels, getting a pin, etc. 
+			2) Injection of commands							- Attacker intercepts communication between a user terminal and the server (ip address). An attacker mimicing some application to a client. 
+			3) User credential guessing							- Brute force attacks involve the trial and error method to obtain sensitive user information.
+			4) IBS2 Security policy violation					- Attacker has unauthorized access to many access methods. 
+			5) Use of known authenticated session by attacker	- Try to persuade or force the user to connect to the server through some pre-defined session which is compromised (spoofing). 
+			The ultimate goal of these attacks is to gain user credentials. An attack tree is built out using the above attack methods, and the various attack method details as shown in the example. 
+
+There are 5 basic tasks for a designer modeling for network security:
+	1) Design an algorithm for security-related transformation
+	2) Generate secret information to be used with the algorithm
+	3) Method for distributing and sharing of information
+	4) Specify protocol which must be withheld by 2 parties
+	5) Security algorithm and the secret information to achieve a particular security service 
+
+Network access security model is to establish protection from unwanted access. 
+
+
+Layering - network communication:
+	Appplication related services:
+		Application(7)	- Application programs that use the network
+		Presentation(6) - Standardise data representation to the application layer
+		Session(5)		- Manage sessions between applications
+
+	Network related services:
+		Transport(4)	- Provide end-to-end error detection and correction
+		Network(3)		- Manage connections across the network
+		Data link(2)	- Provide reliable delivery across physical links
+		Physical(1)		- Define characteristics of media 
+	
+
+Layering: Internet TCP/IP model:
+	Application(1):
+		Operating-system defined applications for use
+	Transport(TCP, UDP):
+		Table of addresses, data, and algorithms for data transmission
+	Network(IP):
+		Table of addressing and algorithms for handling the routing of data
+	Data Link:
+		Packets of some length and algorithms
+	Physical:
+		Digital signal (0 and 1)
+
+SSL (Secure socket layer) 		- Establishes a secure length between the network computers
+TLS (Transport Layer Security) 	- Cryptographic protocol designed to provide communication security over a network
