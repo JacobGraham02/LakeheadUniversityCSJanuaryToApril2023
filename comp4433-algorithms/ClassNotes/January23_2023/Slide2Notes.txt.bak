@@ -1,0 +1,2 @@
+Asymptotic Notations is a way to describe the characteristics of a function in a limit. It describes the growth rate of functions, and focuses on what's important by abstracting away low-order terms and
+constant factors. There are multiple symbols which are described here. Big O is less than or equal to, Big omega (Ω), is greater than or equal to, and big theta (Θ) is equal to. 
