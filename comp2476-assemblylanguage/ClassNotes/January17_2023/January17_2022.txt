@@ -11,6 +11,11 @@ x86 processor architecture:
 		control signals to synchronize actions between different components. The address bus controls when the CPU can access some memory location. When the CPU requests access to some memory, the address bus is mainly 
 		responsible for informing the CPU the memory at that address can be used, and for transferring data over the address bus that is stored at some memory location. 
 
+		Control unit stores sequences of instructions to execute
+		Arithmetic logic unit is the structure which interprets and executes instructions 
+		Data bus is responsible for transfer instructions and data between the CPU and memory
+		The control bus generates the signals for parts of the system to execute some specific task
+		
 
 	Clock:
 		Synchronizes all CPU and bus operations
@@ -47,8 +52,3 @@ x86 processor architecture:
 
 		Cache hit: When data to be read is already in cache memory
 		Cache miss: When data to be read is not in the cache memory 
-
-
-
-IA-32 processor architecture:
-	

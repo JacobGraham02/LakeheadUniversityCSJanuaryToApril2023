@@ -1,0 +1,116 @@
+IA-32 Processor Architecture:
+	Modes of operation:
+		Protected mode:
+			Native mode (Linux, Windows)
+		
+		If a program is restricted by the operating system or computer.
+		
+		Real-address mode:
+			Native MS-DOS
+
+			Implements the programming environment. Useful for when program needs you to access memory and hardware devices, and is current version of Windows. 
+
+		System management mode:
+			Power management, system security, diagnostics
+
+			Implements various pre-defined functions for the operating system. All requirements are considered 
+		Virtual-8086 mode
+			Hybrid of protected
+			Each program has its own 8086 computer
+
+			Virtual memory location for each program; each memory location is 1 megabyte in size. If the program crashes or if the program crashes, the entire system will not crash. 
+
+
+	Basic execution environment:
+		We need to know how additional memory modes are working, and how they are based on registers and how the registers work together with the processer. What is the meaning of the registers and the different flags. 
+		Addressable memory: If we have 10 bits, we would have 2^10 different memory locations which are addressable (1024). If we have 10 bits, we can provide a 1 kb memory location. 
+		Protected mode: Able to provide 4 gb of memory based on 32-bit addresses. 
+		Real-address and Virtual-8086 modes provides 1 MB of space based on 20-bit addresses.
+
+	General-purpose registers:
+		Named storage locations inside the CPU, optimized for speed
+			32-bit general-purpose registers:
+				EAX				EBP
+				EBX				ESP
+				ECX				ESI
+				EDX				EDI
+				EFLAGS
+				EIP
+	
+			16-bit segment registers:
+				CS
+				ES
+				SS
+				FS
+				DS
+				
+
+	Accessing parts of registers:
+		Use 8, 16, or 32-bit name
+		Applies to EAX, EBX, ECX, and EDX
+		You have to use specific registers listed when storing some amount of data. For example, you must use EAX if you want to store some data that is 32-bits in size. 
+		You cannot use 32-bit or 16-bit registers with 8-bit operation mode. 
+
+
+		Specialized register uses:
+			General purpose:
+				EAX - Automatically used by multiplication and division operations; accumulator
+				ECX - Loop counter for any repeating operations. 
+				ESP - Stack pointer. You have to manually move the stack pointer value. 
+				ESI and EDI - Index registers when you want to store the source and destination register or memory location in a stack, for example.
+				EBP - Extended frame pointer to reference some function parameters in a local variable stack. Should not be used for any particular data operation.
+
+			Segment:
+				Should be used when holding program structure data / code
+				CS - Code segment
+				DS - Data segment
+				SS - Stack segment
+				ES, FS, GS - Additional segments
+				EIP - Instruction pointer			- Pointing to the next instruction which needs to be executed by the CPU. 
+
+			Eflags:
+			
+
+	
+
+	Status flags:
+		Carry: Set when the result of some operation is too large to fit into the destination register when some operation executed in the source registers. 
+		Overflow: 
+		Sign: Set when the result of an operation is negative
+		Zero: Set when the resultant operation is zero
+		Auxiliary carry: 
+		Parity flag: Set when the significant byte in the results contain an even number of long bits. 
+
+	
+	Floating-point, MMX, XMM registers:
+		Eight 80-bit floating-point data registers used for floating point arithmetic
+			ST(0), ST(1), ... ,ST(7)
+			arranged in a stack
+			Used for all floating-point arithmetic. 
+		Eight 64-bit MMX registers
+		Eight 128-bit XMM registers for single-instruction multiple-data (SIMD) operations. 
+
+
+	
+	IA-32 memory management:
+		Real-address mode:
+		Calculating linear address:
+		Protected mode: A program will only be allowed to access memory that is assigned for use by that specific program. 
+		Multi-segment mode:
+		Paging:
+
+
+		Protected mode:
+			4 gb addressable RAM
+			00000000 to FFFFFFFFh . h indicates the value we have is hexadecimal. 
+			Each program is assigned a memory partition which is protected from the other programs. If some program is running, we do not want the operating system to execute some other process in that memory partition.
+			Designed for multitasking and is supported by Windows and Linux. 
+
+		
+		
+		64-bit processors:
+			The instruction set is the 64-bit extension of the x86-64 instruction set. 
+
+		
+		Components of an IA-32 microcomputer:
+			Motherboard, Video output, Memory, Input-Output ports. 
