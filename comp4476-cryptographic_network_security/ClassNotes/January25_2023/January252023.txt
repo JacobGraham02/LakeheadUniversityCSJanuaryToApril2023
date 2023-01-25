@@ -1,0 +1,103 @@
+Layering - network communication:
+	Appplication related services:
+		Application(7)	- Application programs that use the network
+		Presentation(6) - Standardise data representation to the application layer
+		Session(5)		- Manage sessions between applications
+
+	Network related services:
+		Transport(4)	- Provide end-to-end error detection and correction
+		Network(3)		- Manage connections across the network
+		Data link(2)	- Provide reliable delivery across physical links
+		Physical(1)		- Define characteristics of media 
+	
+
+Layering: Internet TCP/IP model:
+	Application(1):
+		Operating-system defined applications for use
+		Possible security enhancement: Kerboros, HTTPS, SMINE, PGP.
+	Transport(TCP, UDP):
+		Table of addresses, data, and algorithms for data transmission
+		Possible security enhancement: SSL, TLS
+	Network(IP, Internet Control Message Protocol used to send error messages):
+		Table of addressing and algorithms for handling the routing of data
+		Possible security enhancement: IP Sec
+	Data Link:
+		Packets of some length and algorithms
+		...: Encrypting packets; can encrypt data grams for use. 
+	Physical:
+		Digital signal (0 and 1)
+		...: Hardware chip for encryption 
+
+SSL (Secure socket layer) 		- Establishes a secure connection between the network computers
+TLS (Transport Layer Security) 	- Cryptographic protocol designed to provide communication security over a network
+
+Why deploy security at IP layer?
+	Security at the ip layer is related to the network layer's function of end-to-end datagram delivery. The security weaknesses are:
+		Network spoofing - e.g.: one machine can masquerade as another machine temporarily, message replay, authentication issues, 
+
+Why ... at transport layer?
+	Application at higher layers are normally based on socket communications, and therefore security can be achieved with SSL and TLS. 
+
+Can we also implement security at the application layer?
+	We need different ways to secure each type of application:
+		Secure Mobile Agents
+		Secure email (PGP -> Pretty good privacy, S/MINE)
+		Secure web (HTTPS -> Between web servers and browsers)
+		Secureity with Kerboros -> Authentication protocol which allows users to verify their identity with other computers. 
+
+
+
+Classical encryption techniques:
+	Plaintext - An original message
+	Ciphertext - The coded message
+	Enciphering/encrypting - The process of converting from plaintext to ciphertext
+	Deciphering/decrypting - Restoring the plaintext from the ciphertext
+	Cryptography - The area of study of the many schemes used for encryption
+	Cryptographic system/cipher - A scheme
+	Cryptanalysis - Techniques used for deciphering a message without any knowledge of the enciphering details
+	Cryptology - The areas of cryptography and cryptanalysis
+
+	
+	Symmetric encryption:
+		First, there is plaintext input which is encrypted using an algorithm such as AES and the secret key is shaerd with the sender and recipient. Then, the ciphertext is transmitted over a secure channel to the intended
+		recipient. Once the data has finished transmission, the secret key is used by the recipient to perform a decryption algorithm on the ciphertext and convert to plain text. 
+		The secret key is a value independent of the plaintext and algorithm. 
+
+
+	Symmetric cipher model:
+		There are two requirements for secure use of conventional encryption:
+			1) A strong encryption algorithm
+			2) The sender and receiver must have obtained copies of the secret key in a secure fashion and must keep the key secure 
+
+	Cryptographic systems:
+		Characterized along three independent dimensions:
+			The type of operations used for transforming plaintext to ciphertext. Substitution refers to each element in the plain text mapped to another element. Transposition refers to rearranging the plain text elements.
+			With respect to the number of keys used. Symmetric refers to a single or the same key. Symmetric, single-key, secret-key, conventional, encryption. In the case of asymmetric, different keys are used. 
+			The way in which the plaintext is processed. The block cipher processes plaintext or any input data in the form of blocks. A steam cipher continuously processes one element at a time. 
+		
+		Cryptanalysis and brute-force attack:
+			Cryptanalysis: The attack relies on the nature of the algorithm plus some knowledge of the general characteristics of the plaintext. Attack exploits the characters of the algorithm to attempt to deduce a 
+			specific plaintext or to deduce the key being used.
+			Brute-force attack: The attacker tries every possible key on a piece of ciphertext until an intelligible translation into plaintext is obtained. On average, half of all possible keys must be tried to achieve success. 
+			every possible key is guessed and used. 
+
+		Encryption scheme security:
+			Unconditionally secure:
+				No matter how much time an opponent has, it is impossible for him or her to decrypt the ciphertext simply because the required information is not there
+			Computationally secure:
+				The cost of breaking the cipher exceeds the value of the encrypted information
+				The time required to break the cipher exceeds the useful lifetime of the information 
+
+		Brute force attack:
+			Involves trying every possible key until an intelligble translation of the ciphertext into plaintext is obtained 
+			-> On average, half of all possible keys must be tried to achieve success
+			-> To supplement the brute-force approach, some degree of knowledge about the expected plaintext is needed, and some means of automatically distinguishing plaintext from garble is also needed
+
+		Caesar cipher: 
+			Simplest and earliest known use of substitution cipher. Involves replacing each letter of the alphabet with the letter standing three places further down the alphabet. Alphabet is wrapped around so that the letter
+			following Z is A. 
+			plain: meet me after the toga party
+			cipher: PHHW PH DIWHU WKH WRJD SDUWB
+
+		
+		

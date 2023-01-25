@@ -42,14 +42,19 @@ Layering - network communication:
 Layering: Internet TCP/IP model:
 	Application(1):
 		Operating-system defined applications for use
+		Possible security enhancement: Kerboros, HTTPS, SMINE, PGP.
 	Transport(TCP, UDP):
 		Table of addresses, data, and algorithms for data transmission
-	Network(IP):
+		Possible security enhancement: SSL, TLS
+	Network(IP, Internet Control Message Protocol used to send error messages):
 		Table of addressing and algorithms for handling the routing of data
+		Possible security enhancement: IP Sec
 	Data Link:
 		Packets of some length and algorithms
+		...: Encrypting packets; can encrypt data grams for use. 
 	Physical:
 		Digital signal (0 and 1)
+		...: Hardware chip for encryption 
 
 SSL (Secure socket layer) 		- Establishes a secure length between the network computers
 TLS (Transport Layer Security) 	- Cryptographic protocol designed to provide communication security over a network
