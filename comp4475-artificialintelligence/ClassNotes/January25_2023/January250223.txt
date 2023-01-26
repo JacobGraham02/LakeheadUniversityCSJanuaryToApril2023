@@ -1,0 +1,17 @@
+Previous 3 pages of content needed here
+
+The search A* is admissible if:
+	The branching factor for the tree is finite
+	Edge costs are bounded above geno
+	The heuristic function h(n) is a lower bound on the actual minimum cost of the shortest path. From n to the goal state g
+
+...
+
+Meanwhile, if the search tree is infinite, it means some node will be inserted into F and selected from F repeatedly. Each time the node (say node n) is selected, the f-value for that node will be increased. 
+f(n) = g(n) + h(n). 
+Since the actual cost for reaching n from S, g(n) always increases. 
+
+2. We now prove that the first solution is optimal. Suppose we have an optimal path in the form cs, n1, n2, ..., nk, t). And (s -> t') refers to some non-optimal solution. We know that f(t') = g(t') + h(t'). 
+f(g') = g(g') + h(g') equals to theactual cost f rom s to g'.
+Since n1 is a neighbor of s, it must be inserted into F. But f(n1) = g(n1) + h(n1), is less than or equal to f(g), which is the minimal cost of the parse to g from s. 
+f(n1) < f(g'), which means A will be expanded before g'. In addition, n2 as a neighbor of n1 will be inserted into F. Eventually, ne will be inserted into F before g' is expanded. Since f(nk) < f(g')
