@@ -1,0 +1,105 @@
+Chapter 3 on page 145 of 2579. The chapter is titled 'Solving Problems by Searching'
+
+	An agent to solve a problem in AI is called a 'problem-solving agent'. The computational process undetaken is called a search. These agents use atomic representations, as described in Section 2.4.7. States of the world
+	are considered as wholes, with no internal structure visible to the problem-solving algorithms. Agents that use factored or structured representations of states are called planning agents. 
+
+	Problem-solving agents can follow a 4-step process when solving problems:
+		Goal formulation: The agent adops the goal and organizes their behavior by limiting the objectives and hence the actions to be considered. 
+		Problem formulation: The agent devises a description of the states and actions necessary to reach the goal - an abstract model of the relevant part of the world. 
+		Search: Before taking any action, the agent simulates sequences of actions in its model, searching until it finds a sequence of actions that reaches the goal. Such a sequence is called a solution. The agent might have to
+		stimulate multiple sequences that do not reach the goal, but eventually wil find a solution or that none are available. 
+		
+		In a fully observable, deterministic environment, it is important that the solution be a fixed sequence of actions. If the model the agent is based on is correct, then once the agent has found a solutino, it can ignore
+		everything else and immediately begin execution its actions. This is because any known solution is guaranteed to lead to a goal. 
+
+		A searching problem is formally defined as follows: 
+			A set of possible states that the environment can be in. We call this the state space. 
+			The initial state the agent starts in; and a set of one or more goal states. 
+
+			The actions available to an agent, given the state s, Action(s) returns a finite set of actions that can be executed in s. 
+			An action cost function, denoted Action-Cost(s,a,s') gives the numeric cost of applying action a in state s to reach state s'. A problem-solving agent should use a cost function that reflects
+				its own performance measure. 
+			
+
+	Chapter 3 on page 176 of 2579: 
+	A search algorithm takes a search problem as input and returns a solution, or an indication of failure. We consider algorithms that superimpose a search tree over the state-space graph, forming various paths from
+the initial state, trying to find a path that reaches the goal state. Each node in the search tree corresponds to a state in the state space and the edges in the search tree correspond to actions. The root of the tree
+corresponds to the initial state of the problem. 
+	The state space describes the possibly infinite set of states in the world, and the actions that allow transitions from one state to another. The search tree describes paths between these states, reaching towards the goal. The
+search tree may have multiple paths for any given state, but each node in the tree has a unique path back to the root. 
+
+	Best-first search:
+		A very general approach to deciding which node to expand upon next when traversing a graph, a general approach is using the best-first search approach. Using this, we choose a node n with the minimum value from some 
+	evaluation function. On each iteration we choose a node on the frontier with minimum f(n) value, return if its state is a goal state, and otherwise apply Expand to generate child nodes. 
+
+
+	
+	Search data structures:
+		A node in the tree has 4 components: 
+			node.State : The state to which the node corresponds.
+			node.Parent : The node in the tree that generated the current node.
+			node.Action : The action that was applied to the parent node to generate the current node.
+			node.Path-Cost : The total cost of the path from the initial state to this node.
+
+		Following the parent pointers back from thhe node allows us to recover the states and actions along the path to that node. Doing this from a goal node gives us the solution. 
+		Three kinds of queues are used in search algorithms:
+			A priority queue first pops the node with the minimum cost according to some evaluation function, f. This is used in best-first search
+			A FIFO queue first pops the node that was added to the queue first. This is used in a breadth-first search
+			A LIFO queue pops first the most recently added node. This is used in depth-first search
+
+			Reached states can be stored as a lookup t able (e.g. hash table) where the keys are states and the values are nodes for that state. 
+
+
+	Measuring problem-solving performance:
+		There are 4 general ways to determine an algorithms performance:
+			1) Completeness: Is the algorithm guaranteeed to find a solution when there is one, and to correctly report failure when there is not?
+			2) Cost optimality: Does it find a solution with the lowest path cost of all solutions?
+			3) Time complexity: How long does it take to find a solution? This can be measured in seconds, or more abstractly by the number of states and actions considered.
+			4) How much memory is needed to perform the search?
+
+		To be a complete search algorithm, the algorithm must be systematic in the way it explores an infinite state space, making sure it can eventually reach any state that is connected to the initial state. 
+		Time and space complexity are considered with respect to some measure of the problem difficulty. In Computer Science, the typical measure is the size of the state-space graph, |V| + |E|, where |V| is the number of 
+		vertices (state nodes) of the graph and |E| is the number of edges (distinct state/action pairs). This is appropriate when  the graph is an explicit data structure. Many times 
+		internally in AI, a graph is represented only implicitly by the initial state, actions, and transition model For an implicit state space, complexity can be measured in terms of d, the depth or number of actions in an
+		optimal solution; m, the maximum number of actions in any path; and b, the branching factor or number of successors of a node that need to be considered. 
+
+	
+	Uninformed search strategies:
+		An uninformed search algorithm is given no clue about how close a state is to the goal(s). An informed agent, on the other hand, has knowledge on which states lead to the most optimal goal state. 
+
+		
+		Breadth-first search:
+			When all actions have the same cost, an appropriate strategy is breadth-first search, in which the root node is expanded first. Next, all of the successors of the root node are expanded next, and then their successors,
+		and so on. Because this is a systematic search strategy, it is complete even on infinite state spaces. 
+			Cost-optimal for nodes which have the same cost because when generating nodes at depth d, all nodes at depth d - 1 have already been generated. Imagine searching a uniform tree where every state has b successors. 
+		The root of the search tree generates b nodes, each of which generates b more nodes, for a total of b^2 at the second level. The same repeated for b^3, b^4, b^d, etc. If the solution is at depth d, the total number of
+		nodes generated is O(b^d); that complexity is for both space and time. In general, any exponential-complexity search problems cannot be solved by uninformed search for any but the smallest instances. 
+
+
+		
+		Dijkstra's algorithm or uniform-cost search:
+			The idea is that while breadth-first search spreads out in waves of uniform depth, uniform-cost search spreads out in waves of uniform path-cost. The algorithm can be implemented as a call to Best-First-Search with 
+		Path-Cost as the evaluation function. 
+
+
+		Depth-first search:
+			Always expands the deepest node in the frontier first. The search proceeds to the deepest level of the search tree, where the nodes have no successors. The search then 'backs up' to the next deepest node that still has
+		unexpanded successors. Depth-first search is not cost-optimal; it returns the first solution it finds, even if not the cheapest. For finite-state spaces that are trees it is efficient and complete. In an infinite-state
+		space, depth-first search is nont systematic and can get stuck going down an infinite path. Therefore, depth-first search is incomplete. 
+
+		Continue from page 186
+
+
+
+	
+	Informed (Heuristic) search strategies:
+		Informed search strategies use domain-specific hints about the location of goals - they can find solutions more efficiently then an uninformed strategy. The hints come in the form of a heuristic function, denoted h(n). 
+		h(n) = estimated cost of the cheapest path from the state at node n to a goal state. 
+
+		
+		Greedy best-first search:
+			A form of best-first search that expands first the node with the lowest h(n) value - the node that appears to be closest to the goal - on the grounds that this is likely to lead to a solution quickly. So, the 
+		evaluation function f(n) = h(n). 
+		
+
+

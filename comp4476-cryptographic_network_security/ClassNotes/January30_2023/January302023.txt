@@ -1,0 +1,21 @@
+Playfair cipher strategy:
+		
+	Suppose we have a 5x5 matrix with the keyword as 'MONARCHY'. 5x5 = 25 cells, and the alphabet has 26 letters. For the example word mosque, we will split up the word into 3 parts and create a diagram with those
+	For mosque, we will create mo, sq, and use. 
+
+	mo	sq	ue
+
+
+	m o n a   r 
+	c h y b   d
+	e f g i/j k
+	l p q s   t
+    u v w x   z
+
+	For each letter in the sequence of 2 letters, we must first determine if the 2 letters exist in the same row in the matrix. If they are in the same row, each letter can be converted to the letter directly to the right.
+	For example, m can be converted to o, and o can be converted to n. If they are in the same column, you will use the letter directly below the one in question. For example, for el, e can be converted to l, and l can be 
+	converted to u. If you need to convert u for example, you need to 'wrap around', and go to the top of the matrix. Therefore, u will be converted to m. 
+
+	Strategy known as Playfair cipher. Best-known multiple-letter encryption cipher and based on the use of a 5x5 matrix of letters constructed using a keyword. 
+
+	Always use the keyword 'monarchy' when constructing the 5x5 matrix, and fill in matrix letters from top left to bottom right. 
