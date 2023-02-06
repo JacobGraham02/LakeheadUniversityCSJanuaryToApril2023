@@ -1,0 +1,182 @@
+On a 32-bit processor, there are 32 bits in each floating-point data register. 
+The x86-64 instruction set is backward-compatible with the x86 instruction set.
+In current 64-bit chip implementations, all 64 bits are not used for addressing. We only consider the 48 bits for memory addresses. 
+
+
+1. Basic elements of Assembly language
+2. Example: Adding and subtracting integers
+3. Assembling, linking, and running programs
+4. Defining data
+5. Symbolic constants
+6. 64-bit programming
+
+
+[1]:
+	Integer constants:
+		Optional leading + or - sign
+		Binary, decimal, hexadecimal, or octal digits
+		Common radix characters:
+			h - hexadecimal
+			d - decimal
+			b - binary
+			r - encoded real
+		Examples: 30d, 6Ah, 42, 1101b - Each number or data type needs a corresponding letter on the end to indicate the data type.
+		26			; decimal
+		26d			; decimal
+		1101b		; binary
+		42q			; octal
+		42o			; octal
+		
+
+	Integer expressions:
+		Operators and precedence levels:
+			()			1		parenthesis
+			+-			2		unary plus, minus
+			*/			3		multiply, divide
+			%			3		modulus
+			+-			4		add, subtract
+
+
+	Character and string constants:
+		Enclose character in single or double quotes
+			ASCII character = 1 byte
+		
+		Enclose strings in single or double quotes
+			"ABC"
+			'xyz'
+			Each character occupies a single byte
+		Embedded quotes
+			'Say "Goodnight," Gracie'. 
+
+
+	Reserved words and identifiers
+		Reserved words cannot be used as identifiers:
+			Instruction mnemonics, directives, type attributes, operators, predefined symbols
+		Identifiers:
+			1-247 characters, including digits
+			not case-sensitive
+			first character must be a letter 
+			
+
+	Directives
+		Comamnds that are recognized and acted upon by the assembler. 
+			Not part of intel instruction set
+			Used to declare code, data areas, select memory model, declare procedures, etc.
+			Not case sensitive
+		Different assemblers have different directives
+			NASM not the same as MASM 
+
+			myVar 	DWORD	26
+			mov		eax,myVar
+
+
+		.data			# data area
+		sum DWORD0		# variable named sum
+		
+		.code			# This is the code area
+		main PROC
+			mov eax, 5	# move 5 to the eax register
+			add eax, 6	# add 6 to the eax register
+			mov sum, eax
+
+			INVOKE ExitProcess, 0
+
+
+	Instructions
+		Statement that becomes executable when program is assembled. Executed at runtime by the CPU. We use the Intel IA-32 instruction set. 
+		An instruction contains:
+			Label 	 (optional)
+			Mnemonic (required)
+			Operand  (depends on instruction)
+
+		
+		Labels act as place markers to mark the address of code and data. Data label provides a common way to reference a variable in the assembly code. Data label must be unique. 
+		Code label provides the marker for the target of jump and loop instructions.
+
+
+	Mnemonics and operands
+		... copy from slides
+
+
+	Comments
+		Single-line comments begin with semicolon
+		Multi-line comments begin with COMMENT directive and a programmer-chosen character. They end with the same programmer-chosen character
+
+		e.g. # this is a comment
+		COMMENT !
+			This is a multi-line comment
+		! 
+
+	
+	Instruction format examples
+		No operands
+			stc			; set carry flag
+		
+		One operand
+			inc eax		; register
+		...
+
+	
+[2]:
+	Code example
+		Line 4 indicates the architecture that our program is run on is 32-bit. 
+		
+		Line 5 defines the memory model(s) to use for the procedure. The memory model we are using is 'flat' 
+		
+		Line 6 the .stack directive asks the assembler to assign 4096 bytes to the program stack. 
+
+		Line 9 indicates the code section for the program. The code label is defined for the actual main procedure for the program. 
+		
+		Line 10 indicates the main procedure to call in the program, and commands are defined in line 10 
+
+		Line 14 Invokes the ExitProcess predefined variable with 0, indicating to the operating system the program has successfully executed. 
+
+		Line 15 means the end of the current procedure we are executing
+	
+		Line 17 means the end of the assembly file 
+
+	    Program Template
+			; Program Template (Template.asm)
+			; Program Description:
+			; Author:
+			; Creation Date:
+			; Revisions:
+			; Date:Modified by:
+			.386
+			.model flat,stdcall
+			.stack 4096
+			ExitProcess PROTO, dwExitCode:DWORD
+			.data
+			; declare variables here
+			.code
+			main PROC
+			; write your code here
+			INVOKE ExitProcess,0
+			main ENDP
+			; (insert additional procedures here)
+			END main
+
+
+[3]:
+	Assemble-link-execute cycle. Listing file and mapping file.
+		
+	Describes the steps from creating a source program through executing the compiled program. If the source code is modified, steps 2 through 4 must be repeated.
+
+	The assembler reads the source file, and produces the object file (machine-language translation of program). The listing file is the optional output mainly useful for errors and you want to debug the program. 
+	There is a separate linker library that reads the program file, and sees if there are any calls to the linker library, and combines the object file with some other library file to produce an executable file. The file is 
+	then mapped to computer memory and loaded into the operating system for later execution. 
+
+	
+	Listing file
+		Use it to see how your prgoram is compiled
+		Contains
+			Source code
+			Addresses
+			Object code
+			Segment names
+			Symbols
+
+		
+		The code statements themselves are translated into data types (hexadecimal, binary, etc). 
+		In the listing file code challenge on line 12, the first number 00000005 goes from 00000000 -> 00000005 because of the number of bytes used in the instruction. The B8 after the number is the instruction used for the 
+		mov command. 

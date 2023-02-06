@@ -1,17 +1,25 @@
+; AddTwo.asm - adds two 32-bit integers.
+; Chapter 3 example
+
 .386
-.model flat, stdcall
+.model flat,stdcall
 .stack 4096
-
-ExitProcess PROTO, dwExitCode:DWORD
-
-.data
-myList DWORD 2, 3, 5, 8
+ExitProcess proto,dwExitCode:dword
 
 .code
-main PROC
-	mov eax, 7
-	add eax, 8
-	INVOKE ExitProcess, eax
-main ENDP
+main proc
+	mov	eax,5				
+	add	eax,6
 
-END main
+	push eax
+
+	sub eax, 6
+
+	push eax
+
+	pop eax
+	pop eax
+
+	invoke ExitProcess,0
+main endp
+end main
