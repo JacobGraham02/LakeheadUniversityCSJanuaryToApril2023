@@ -1,0 +1,3 @@
+First-order logic language:
+	
+	Chapter 7, 8, and 9 in the textbook cover all of this information. The |= symbol means 'entails'. 
