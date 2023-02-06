@@ -1,0 +1,14 @@
+Ciphers:
+	
+	Rail fence cipher - Transposition method cipher. Substituion involves mapping characters and numbers of the original message to some other characters and numbers. Transposition is reordering the original string of characters
+to be in a different order. Plaintext written down as a sequence of diagonals are then read off as a sequence of rows. To encipher the message, "meet me after the toga party" wit hthe rail fence of depth 2, we would write: 
+	
+
+	Row transposition cipher - More complex transposition. Write the message in a rectangle, row by row, and read the message off, column by column, but permute the order of the columns. 
+
+
+Steganography:
+	Not an encryption scheme; hiding the extistance of a method. 
+
+
+
