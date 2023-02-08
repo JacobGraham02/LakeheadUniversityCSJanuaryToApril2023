@@ -1,0 +1,34 @@
+Entailing a sentence from a knowledge base
+
+
+	Slide 2: 
+		If clause 1 has a letter p, and clause 2 has a latter than is the complement of p, we can cancel out those letters and use only the letters that remain. Resolution of 2 procedures means there exists a condition
+	on the resolution for clause c1 and c2. If there exists 2 clauses which can be resolved to generate a new clause, we can resolve a new clause for a knowledge base. As long as we can resolve a new sentence alpha, the alpha
+	can be entailed from the knowledge base clause. Whatever clauses are derived are entailed from the knowledge base. 
+	
+
+
+	Slide 3 - Proof on the soundness of resolution: 	
+		If we have a knowledge base with one clause that contains the letter p and additional disjunctive letters (c1) and some additional opposite clause (c2), it is entailed that we get alpha and beta. As long as there 
+	exists an interpretation that satisfies kb, it is the case the same interptetion will satisfy c3 as a logical consequence. The interpretation actually satisfies p or alpha because I is a model for this knowledge base, and
+	satisfies the knowledge base. If I entails p, it has to be the cost that I does not entail not p. This also means that I entails beta. 
+		Suppose there exists an interpretation satisfies the knowledge base. Then, it must be the case it also satisfies c3. 
+
+
+	
+	Slide 4 - Special case of unsatisfiable kb:
+		Suppose we have an unsatisfied kb which holds the clause of p and not p. This solution is not satisfiable because there is no condition or equation in which to place c1 and c2. kb which is unsatisfiable entails 
+		an empty clause, thus entailing false and is indeed unsatisfiable. There does not exist any sentence which satisfies this knowledge base. 
+
+
+	
+	Slide 5 - Completeness if there exists any kb that entails something as alpha.
+		However, if it is not the case that kb entails alpha, it is bad news. We know that if we have kb that entails one single clause and we know kb not p entails clause not p and not q. However, we cannot find any resolution
+	procedure to create this sentence that is c1. There is also good news from the bad news. The good news is resolution is actually refutation complete. If kb entails an empty clause (unsatisfiable), kb will necessarily
+	entail an empty clause. Then we have the soundness property and completeness property for the kb. 
+
+	
+	
+	Slide 6 - Getting back the question; how to prove kb entails alpha:
+		We can take two steps: Convert the original problem of figuring out if alpha is a logical consequence is equivalent to asking if this kb is in union with the negation of origin sentence is unsatisfiable. 
+		To prove alpha is not a logical consequence, we generate the union of original sentence (kb') and ask if the union is unsatisfiable. kb' entails an empty clause if and only if kb' entails an empty clause. 

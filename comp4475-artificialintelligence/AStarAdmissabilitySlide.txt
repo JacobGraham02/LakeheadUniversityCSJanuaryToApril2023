@@ -1,0 +1,16 @@
+	Graph nodes with different subscripts are for different nodes in the graph (e.g. n1, n2) are two different nodes in the set N of E, whereas same graph nodes with different superscripts are for different
+appearences in the locations of the search tree. 
+
+
+	Proof of admissibility of A*. The A* search is admissible if and only if as long as solutions exist, an optimal solution (i.e. a shortest path from a start node s to the goal node g) will be found by A*. Even if the 
+search is infinite (i.e. graphs with cycles).
+	Then, the search A* is admissible if:
+		1) The branching factor of the tree is finite
+		2) Edge costs are bounded above zero
+		3) The heuristic function h(n) is a lower bound on the actual minimum cost of the shortest path from n to the goal node g.
+		
+	Proof 1: We will first prove that A* always finds a solution upon the settings above. If the search tree is with finite depth (no cycle), then the frontier F will not be trapped into infinte cycles, and all nodes/paths
+will be explored sooner or later, including the solution path since there exists at least one.
+Meanwhile, if the tree is infinite, it means some nodes will be inserted into F and selected from F repeatedly. But, each tiime the node (say node n) is selected, the value will be increased: f(n) = g(n) + h(n). Since the 
+actual cost for reaching in from s, g(n) always increases. But this means a frontier node for the solution path will eventually be selected. 
+		
