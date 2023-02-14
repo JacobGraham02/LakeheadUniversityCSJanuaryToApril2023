@@ -1,0 +1,7 @@
+Midterm online from 10:00 - 11:20 am. Questions are correlated to the topics we have covered so far. 
+
+A* search optimality:
+	Overall optimality of the solution - admissibility of the procedure itself.
+	
+
+Formal representation and interpretations of logic. Interpretation for specific knowledge base that is written in first-order logic. Contains first-anary functions, propositional logic, etc. 
