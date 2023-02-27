@@ -1,0 +1,3 @@
+Table 8.2:
+	If the fraction of bits that match with preceding block differ substantially from its associated value in the fraction of one bits column,
+there is a security vulnerability. Values substantially far from 0.5 indicate more security vulnerability. 

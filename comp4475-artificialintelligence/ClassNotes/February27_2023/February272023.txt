@@ -1,0 +1,8 @@
+Uppercase is predicate - it constructs atomics. Clausal form is a clause which follows the format of a conjunction of the disjunctions. 
+
+	kb entails alpha iff kb union not alpha is unsatisfiable iff kb union not alpha does not entail empty clause. Let's say we want a knowldge base to enail
+hard worker sue. We will negate the query hw(sue) in the first state into not hw(sue). We need to add this sentence to the kb to see if an empty clause can be 
+derived. The clause we have now is not student(sue) and hw(sue), which is derived from the knowledge base. 
+
+	If a knowledge base contains only the sentence p, then the knowledge base always entails p. We can negate this p in clausal form to get kb prime. A 
+conjunction of 2 disjunctions is what makes a clausal form. Using resolution, a clause containing p and not p resolves to an empty clause. 
