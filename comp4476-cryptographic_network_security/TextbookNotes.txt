@@ -1,0 +1,12 @@
+Computer Security objectives:
+	Confidentiality (privacy and data confidentiality), Integrity (data and system integrity), and Availability. These three concepts from what is known as the
+CIA triad; the three concepts embody the fundamental security objectives for both data and for information and computing services. Two other commonly
+mentioned security concepts are authenticity and accountability. A breach of security has three levels: low, medium, and high. 
+
+	Masquarade: Takes place when one entity pretends to be a different entity. Usually includes one of the other forms of active attacks. 
+	Replay: Involves the passive capture of a data unit and its subsequent retransmission to produce an unauthorized effect.
+	Modification of messages: Some portion of a legitimate message is altered, or messages are delayed or reordered to produce an unauthorized effect.
+	Denial of service: Prevents or inhibits the normal use or management of communications facilities. 
+
+Security services are services provided by a protocol layer of communicating open systems and that ensures adequate security of the systems or of data transfers.
+A processing or communication service provided by a system to give a specific kind of protection to system resources. 
