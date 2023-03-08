@@ -1,0 +1,31 @@
+Miller-Rabin Algorithm example:
+	
+	Is 53 a prime number?	
+	1. n - 1 = 2^k * q		n = 53
+		53 - 1 = 2^k * q, k and q are whole numbers
+		52 = 2^k * q
+	
+		52 / 2^1 = 26 
+		52 / 2^2 = 13
+		52 / 2^3 = 6.5
+		
+		52 = 2^2 * 13
+		k = 2 and m = 13
+
+
+	2. 1 < a < n-1 ; Pick any value of a that satisfies this inequality
+		1 < 2 < 52 
+
+
+	3. b sub 0 = a^q mod n 
+	   b sub 0 = 2^13 mod 53 
+		  = 30 mod 53
+
+		b sub 0 can either equal +1 or -1. 
+		b1 = (b sub 0)^2 mod n = 30^2 mod 53
+		   = -1 mod 53
+
+		   
+
+Public key encryption and RSA
+	

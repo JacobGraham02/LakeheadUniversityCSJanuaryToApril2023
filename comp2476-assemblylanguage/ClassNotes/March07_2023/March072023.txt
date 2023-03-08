@@ -1,0 +1,158 @@
+Data transfers, addressing, and arithmetic
+
+	1. Data transfer instructions
+	2. Addition and subtraction
+	3. Data-related operators and directives
+	4. Indirect addressing
+	5. JMP and LOOP instructions
+	6. 64-bit programming
+
+	
+
+	1. 1-3 operands. 
+		Immediate: A constant integer (8, 16, or 32 bits)
+			Value is encoded within the instruction
+
+		Register: The name of a register
+			Register name is converted to a number and encoded within the instruction
+
+		Memory: Reference to a location in memory
+			Memory address is encoded within the instruction, or a register holds the address of a memory location
+
+
+		A direct memory operand is a named reference to storage in memory. The named label is automatically dereferenced by the assembler. 
+			.data
+			var1 BYTE 10h
+			.code
+			mov al,var1		; A direct memroy operand
+			mov al,[var1]	; A direct memory operand
+
+
+		
+		MOV instruction from source to destination: MOV desgination,source
+
+		No more than one memroy operand is permitted
+		CS, EIP, and IP cannot be the destination
+		No immedate to segment moves
+
+		.data
+		count BYTE 100
+		wVal WORD 2
+		.code
+			mov bl,count
+			mov ax,wVal
+			mov count,al
+			
+			mov al,wVal		; error
+			mov ax,count	; error
+			mov eax,count	; error
+
+
+
+		When you a copy a smaller value into a larger destination, the MOVZX instruction fills (extends) the upper half of the destination with zeroes. 
+		mov 	bl,10001111b
+		movzx 	ax,bl			; Zero-extension
+		
+		We have to choose the most-significant bit to use for sign extension.
+
+		XCHG exchanges the values of two operands. At least one operand must be a register. No immediate operands are permitted.
+
+		.data
+		var1 WORD 1000h
+		var2 WORD 2000h
+		.code
+		xchg ax,bx		; exchange 16-bit register
+		xchg ah,al		; exchange 6-bit register
+		xchg var1,bx	; exhcnage mem, reg
+		
+
+		
+
+		Direct-Offset Operands
+				A constant offset is added to a data label to produce an effective address (EA). The address is dereferenced to get the value inside its memory
+			location. 
+
+			.data
+			arrayB BYTE 10h, 20h, 30h, 40h
+			.code
+			mov al,arrayB+1
+			mov al,[arrayB+1]
+
+			.data
+			arrayW WORD 1000h, 2000h, 3000h
+			arrayD DWORD 1,2,3,4
+
+			.code
+			mov ax,[arrayW+2]	; ax  = 2000H
+			mov ax,[arrayW+4]	; ax  = 3000H
+			mov eax[arrayD+4]	; eax = 00000002h 
+
+	
+	
+		Write a program that rearranges the values of three doubleword values in the following array as: 3, 1, 2
+		Step 1: Copy the first value into EAX and exchange it with the value in the second position
+		Step 2: Exchange EAX with the third array value and copy the value in EAX to the first array position
+	
+		.data
+		arrayD DWORD 1,2,3
+
+		.code
+		mov  eax,arrayD
+		xchg eax,[arrayD+4]
+		xchg eax,[arrayD+8]
+		mov  arrayD,eax
+
+		
+
+		We want to write a program that adds the following three bytes:
+		.data
+		myBytes BYTE 80h, 66h, 0A5h
+		
+		.code
+		mov al,myBytes
+		add al,[myBytes+1]
+		add al,[myBytes+2]
+		
+
+
+
+	2. Addition and subtraction
+		Operand may be register or memory
+		
+		INC destination
+			Logic: destination = destination + 1
+		DEC destination
+			Logic: destination = destination - 1
+
+	
+		.data
+		myByte BYTE 0FFH, 0
+		.code
+			mov al,myByte		; AL = FFh
+			mov ah,[myByte+1]	; AH = 00h
+			dec ah				; AH = FFh
+			inc al				; AL = 00h
+			dec ax				; AX = FEFF
+
+
+		ADD destination,source
+			Logic: destination = destination + source
+		SUB destination,source
+			Logic: destination = destination - source
+		Same operand rules as for the MOV instruction
+
+
+
+		
+		4.21 code
+			mov ebx,  Yval
+			neg ebx
+			add eb,   Zval
+			mov eax,  Xval
+			sub eax,  ebx
+			mov Rval, eax
+		
+
+
+	
+	

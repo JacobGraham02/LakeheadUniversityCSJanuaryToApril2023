@@ -1,0 +1,40 @@
+If a | a, then a = +- 1
+If a + b and b | a, then a = +- b
+Any b /= 0 divides 0
+If a | b and b | c, then a | c
+
+If b | g, then g is of the form g = b * g for some integer g
+If b | h, then h is of the form h = b * h for some integer h
+Therefore, mg + nh = mbg + nbh = b * (mg + nh)
+
+Positive integer c gcd of a and b if:
+	c is a divisor of a and b
+	any divisor of a and b is a divisor of c
+
+gcd(a,b) = max[k, such that k | a and k | b]
+
+gcd(a,b) = gcd(|a|,|b|)
+Because we require that the greatest common divisor be positive, g(a,b) = gcd(a,-b) = gcd(-a,b) = gcd(-a,-b)
+Two integers a and b are relatively prime if their only common positive integer factor is 1; this is equivalent to saying that a and b are relatively prime if 
+gcd(a,b) = 1.
+
+
+The modulus: If a is an integer and n is a positive integer, we define a mod n to be the remainder when a is divided by n; the integer n is called the modulus
+Thus, for any integer a:
+	a = qn + r 		0 <= r < n; q = [a/n]
+	a = [a/n] * n + (a mod n)
+
+
+Congruences have the following properties:
+	a = b (mod n) if n (a - b)
+	a = b (mod n) implies b = a (mod n)
+	a = b (mod n) and b = c (mod n) imply a = c (mod n)
+
+To demonstrate the first point, if n (a - b), then (a - b) = kn for some k
+So we can write a = b + km
+
+
+Modular arithmetic exhibits the following properties:
+	[(a mod n) + (b mod n)] mod n = (a + b) mod n
+	[(a mod n) - (b mod n)] mod n = (a - b) mod n
+	[(a mod n) * (b mod n)] mod n = (a * b) mod n
