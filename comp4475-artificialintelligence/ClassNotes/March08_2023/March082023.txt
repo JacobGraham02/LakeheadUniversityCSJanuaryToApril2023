@@ -1,0 +1,2 @@
+Reasoning with horn clauses:
+	Clauses are logically equivalent to implications. 
