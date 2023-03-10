@@ -1,0 +1,28 @@
+We can use the master theorem even if f(n) is not a polynomial function
+
+Q1 true and false (5 questions): T F T F T
+
+The below questions are all using Master Theorem 
+
+Q2a) a b c 
+Q2b) c d e
+Q2c) a b d
+Q2d) c d
+
+Q3a)False
+Q3b)
+	LeafCounter(T)
+	if (T == EmptySet) then
+		n = 0
+	else if (T.left == EmptySet and T.right == EmptySet) then
+		n = 1
+	else 
+		n = LeafCounter(T.left) + LeafCounter(T.right)
+	return n
+
+
+Q4a) b c d
+Q4b) c
+Q4c) b
+
+
