@@ -1,0 +1,4 @@
+﻿  Assembling Task1.asm...
+Task1.asm(4): warning A4011: multiple .MODEL directives found : .MODEL ignored
+Task1.asm(41): error A2026: constant expected
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml.exe /c /nologo /Zi /Fo"Debug\Task1.obj" /W3 /errorReport:prompt  /TaTask1.asm" exited with code 1.

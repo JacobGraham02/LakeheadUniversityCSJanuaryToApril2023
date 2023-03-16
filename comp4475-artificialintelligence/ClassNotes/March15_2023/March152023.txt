@@ -1,0 +1,50 @@
+The denominator is the probability of the alarm system where
+John and Mary both make a call. 
+
+msbnx is the site to check your work 
+Microsoft Belief Networks 
+
+p(j, m, b, a, e) can be calculated by the product of the 5 
+probabilities which has a probability to occur. 
+
+= p(b) * p(e) * p(a|b,e) * p(j|a) * p(m|a)
+
+j and m are dependent on a, and a is dependent on b and e. 
+
+Determine the formula for the following:
+p(j,m,b,not a, not e) = ?
+	
+
+p(j,m,b,a, not e)     = ?
+
+
+p(j,m,b, not a, e)    = ?
+
+
+Rejection sampling on the BN of Family/Dog:
+	Sample from P(FO) = <0.15,0.85>, value is not fo
+	Sample from P(LO|not fo) = <0.05, 0.95>, value is not lo
+	Sample from P(BP) = <0.01,0.99> value is not bp
+	Sample from P(DO|not fo, not bp) = <0.3,0.7>, value is do
+	Sample from P(HB|do) = <0.7,0.3>, value is not hb
+
+	In this case, the sample creates an event of:
+	(not fo, not lo, not bp, do, not hb). 
+
+Rejection sampling for estimating Pr(fo|lo, not hb)
+	Pr(fo|lo, not hb) can actually be estimated as the ratio of:
+	
+	# of samples fo, lo, and not hb
+	///////////////////////////////
+	# of samples lo, and not hb
+
+	= 336 / 668
+	= 0.50299
+
+	which is very close to the true value of 0.5005
+	When the number of samples increases, the aprpoximation is
+	getting closer to th exact value
+	For example, when we run 1 million samples, the ratio is
+	32996 / 65858 = 0.5010, which is even closer to 0.5005
+
+	

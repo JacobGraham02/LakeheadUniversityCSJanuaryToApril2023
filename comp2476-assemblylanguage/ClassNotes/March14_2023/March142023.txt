@@ -1,0 +1,94 @@
+The runtime stack is managed by the CPU using the 2 registers SS (stack segment) and ESP (stack pointer). In real address mode, you use SP instead of ESP. 
+
+Push operation:
+	A 32-bit push operation decrements the stack pointer by 4 and copies a value into the location pointed to by the stack pointer. The area below the ESP is always available unless the stack has overflowed. 
+	
+Pop operation:
+	Copies the value in the stack at the current ESP location into a variable or register. 
+
+Procedure to reverse a string:
+	Use a loop with indexed addressing
+	Push each character onto the stack.
+	Start at the beginning of the string, pop the stack in reverse order, and insert each character back into the string.
+	Each character must be put into the EAX register before it is pushed because only word or doubleword values can be pushed onto the stack.
+	
+	.386
+	.model flat,stdcall
+	.stack 4096
+	ExitProcess proto, dwExitCode:DWORD
+
+	.data
+		aName BYTE "Abraham Lincoln",0
+		nameSize = ($ - aName) - 1
+
+	.code
+	main PROC
+		; Push the name onto the stack
+		mov ecx, nameSize
+		mov esi, 0
+
+	L1: movzx eax, aName[esi] ; Get the current character in the variable and use sign extension 
+		push eax			  ; Push the character in the eax register onto the stack
+		inc esi
+		loop L1
+
+	; Pop the name from the stack in reverse and store in the aName array
+		mov ecx,nameSize
+		mov esi,0
+
+	L2: pop eax				  ; Get the current character in the stack by popping the top memory location
+		mov aName[esi],al	  ; Store the character in the aName string
+		inc esi
+		loop L2
+
+		INVOKE ExitProcess 0
+
+	main ENDP
+	END main
+
+
+Write a program that does the following:
+	1) Assigns integer values to EAX, EBX, ECX, EDX, ESI, and EDI
+	2) Uses PUSHAD to push the general-purpose registers on the stack
+	3) Using a loop, your program should pop each integer from the stack and display it on screen
+
+
+
+
+Defining and using procedures:
+	The following is a simple template for a procedure:
+		sample PROC
+		  .
+		  .
+		  ret
+		sample ENDP
+
+	Documentation recommended for each procedure:
+		1) A description of all the tasks accomplished by the procedure
+		2) Receives: A lits of input parameters; state usage and requirements
+		3) Returns: A description of the values returned by the procedure
+		4) Requires: Optional list of requirements called preconditions that must be satisfied before the procedure is called
+	Without any preconditions satisfied, it will probably not produce the expected output.
+
+	
+	Here is example documentation for a procedure:
+	
+	;--------------------------------------------
+	sumOf Procedure
+	;
+	; Description: Calculates and returns the sum of three 32-bit integers
+	; Receives:    EAX, EBX, ECX, and the three integers. They may be signed or unsigned
+	; Returns:     EAX = sum, and the status flags (Carry, Overflow, Zero, Sign, etc.) are changed.
+	; Requires:    Nothing
+	;
+	;---------------------------------------------
+	add eax, ebx
+	add eax, ecx
+	ret
+	SumOf ENDP
+
+
+
+	The CALL instruction calls a procedure. It pushes the offset of the next instruction onto the stack, and copies the address of the called procedure
+	into the EIP register. 
+	The RET instruction returns from a procedure and pops the top of the stack into the EIP. 

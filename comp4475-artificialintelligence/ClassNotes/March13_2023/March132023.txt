@@ -1,0 +1,113 @@
+Searching strategies and formal representations of logic: First Order Logic and Resolution
+
+Figure out the answer, then use resolution procedures to find the steps needed to get the answer. 
+
+Example - Imagine a family with a dog:
+	dog out (do)							 									(do)
+	When the family is out														(fo)
+	dog out in backyard for periods of time when behaviour problem (bp)			(bp)
+	When dog is out, you can hear it barking (hb) when approaching house		(hb)
+	We usually leave the light on (lo) outside the house when the family is out (lo)
+
+	An interpretation either satisfies a knowledge base model or a negation. If we are presented with an
+interpretation to the word, the interpretation either satisfies the sentence or the negation of it. For 
+logical consequence of KB, the KB might entail Peter is a hard worker, it is not a logical consequence
+because it can not be entailed by the knowledge base of Peter. Sometimes we refer to something as a 'base
+network' with reasoning or beliefs because we need the base network to further construct our reasoning
+or belief. 
+
+	Assign a node to each one of the five variables (FO, LO, BP, DO, HB)
+	2^5 = 32 possible states of the world:
+		(fo, lo, bp, do, hb)
+		(fo, lo, bp, do, not hb)
+		(fo, lo, bp, not do, hb)
+		(fo, lo, bp, not do, not hb)
+		...
+		(not fo, not lo, not bp, not do, hb)
+		(not fo, ... lo, ... bp, ... db, ... hb)
+
+	If you list all these 32 different states, we will consider the probabilities associated with 
+each of these 32 different states. 
+
+	We do not know the true state of the world, and can only assign a degree of belief (between 0 to 1)
+	to each one of these 32 states. 
+
+	Copied from the node list above:
+	Pr(fo, lo, bp, do, hb) = ?
+	...
+	Pr(not fb, not lo, not bp, not do, not hb) = ?
+
+	
+	The sum over beliefs on all of the states is 1. 
+	We need to specigy 2^5 numbers. When n is getting larger, this is not workable. Alternatively, we can
+assume that all variables are conditionally independent to each other, thus we only need to specify 5
+numbers, and any state can be simply calculated as a product for five values. 
+	
+	For example:
+	Pr(fo) = 0.15, Pr(lo) = 0.6, Pr(bp) = 0.1, Pr(do) = 0.4
+	0.15 x 0.6 x 0.1 x (1-0.4) x (1-0.5) = 0.0027
+	Typically there will be a dependency among some variables
+	
+	The consequence of the above is too complicated, because the variables are all related to one another. 
+We only need to specify 5 variable values because we have 5 variables. We need to find 5 probabilities. 
+We need to calculate 32 values for question marks, but can be easily calculated with 5 separate 
+probability values. 
+
+	Bayesian Networks are directed acyclic graphs. Nodes correspond to random variables, and pairs of 
+nodes in a Bayesian graph might be connected by a directed edge. If a points to a, then a has some
+influence on b. Effect of the parents of a node X is quantifeid by a condition probabiliy distribution 
+P(X|Parents(X)). Each variable is conditionally independent from the non-parent variables given the 
+parent variables. 
+
+	When we are dealing with the negation of a property, we subtract the value of the property from 1.
+	For example, if we are dealing with the negation of do, we subtract the value of do from 1. 
+	p(do|not fo, not bp) = 0.3
+
+	Chapter 12 explains implicit knowledge and first order knowledge explained. 
+
+	We cannot carry out reliable reasoning without a description or sequence of words to describe the
+reasoning. 
+
+	The pipe '|' character in this context means 'given that'. 
+
+	Bayesian Networks: how it works:
+		It follows that:
+			Pr(FO, LO, BP, DO, HB) = 
+			Pr(FO) x Pr(LO|FO)x Pr(BP) x Pr(DO|FO, BP) x Pr(HB, DO)
+		
+		For example, Pr(fo, lo, bp, not do, not hb) = 
+			Pr(fo) x Pr(lo|fo) x Pr(bp) x (1-Pr(do|fo, bp)) x (1 - Pr(hb|do)) =
+			0.15 x 0.6 x 0.01 x 0.01 x 0.99 = 0.00000891
+
+		BN are often used to carry out probabilistic inference: computing posterior distribution
+		of a set of variables given a set of evidence variables (variables whose values are observed
+		or assigned). As long as we have the values of variables, we can use the Bayesian Network formula
+		to calculate the values of any node on the Bayesian Network.
+
+		Suppose we want to use the BN to calculate the probabiliy that the family is out given that
+		the light is on but we did not hear barking: Pr(fo|lo, not hb).
+	
+	
+	
+	Exact inference on posterior:
+		We use the conditional probabiliy formula to calculate the conditional probabilities for each
+		The addditive probability is the sum of the first four values over the sum of all the values.
+		
+		We can find the value of negation hb when we calculate the value for the first 4 values
+		(excluding hb) and divide by the sum of all the values (including hb). Can calculate in total
+		8 different probabilities by using different combinations of the variables in the probabilities
+		clauses. For example: Pr(fo, lb, bp, do, not hb) = .15 x .6 x .01 x .99 x .3
+
+		Chain product of probabilities can be used to describe a probabilistic statement. 
+
+	
+	Approximate inference on posterior: Rejection sampling
+
+
+	The representation of a probability is shown using a basic Bayesian network, which is used to 
+	calculate the conditional probability. 
+
+	Exact inference in large networks in computationally intraceable, 
+	
+
+		
