@@ -1,0 +1,33 @@
+﻿  test.asm
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(1,1): error C2059: syntax error: 'constant'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(7,1): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(7,1): error C3484: syntax error: expected '->' before the return type
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(7,2): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(8,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(7,2): error C2146: syntax error: missing ';' before identifier 'data'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(10,45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(10,42): error C2146: syntax error: missing ';' before identifier 'of'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(14,30): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(14,27): error C2146: syntax error: missing ';' before identifier 'up'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(15,30): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(15,23): error C2086: 'int set': redefinition
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(14): message : see declaration of 'set'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(15,27): error C2146: syntax error: missing ';' before identifier 'up'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(16,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(16,27): error C2086: 'int set': redefinition
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(14): message : see declaration of 'set'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(16,31): error C2146: syntax error: missing ';' before identifier 'up'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(19,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(19,11): error C2146: syntax error: missing ';' before identifier 'eax'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(19,41): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(19,36): error C2146: syntax error: missing ';' before identifier 'word'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(20,49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(20,44): error C2146: syntax error: missing ';' before identifier 'word'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(21,35): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(21,28): error C2146: syntax error: missing ';' before identifier 'source'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(22,40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(22,18): error C2086: 'int increment': redefinition
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(21): message : see declaration of 'increment'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(22,28): error C2146: syntax error: missing ';' before identifier 'destination'
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(23,33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\JakeG\OneDrive\old\Desktop\LakeheadUniversity\Year_3_Winter\GithubRepository\comp2476-assemblylanguage\Lab3\Lab3\test.asm(23,25): error C2146: syntax error: missing ';' before identifier 'counter'

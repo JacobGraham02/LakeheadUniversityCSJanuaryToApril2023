@@ -15,11 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="Task1.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
+    <None Include="Irvine32.inc">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\..\..\..\..\..\..\..\..\..\Irvine\Irvine32.lib" />
+    <Library Include="Irvine32.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Task2.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
